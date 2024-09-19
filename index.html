@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0;
+            margin: 0;
+            height: 100vh;
+        }
+        #gameContainer {
+            position: relative;
+        }
+        canvas {
+            display: block;
+        }
+        #nextShapeCanvas {
+            position: absolute;
+            top: 10px;
+            left: 410px; /* 调整位置 */
+        }
+        #scoreCanvas {
+            position: absolute;
+            top: 220px;
+            left: 410px; /* 调整位置 */
+        }
+        button {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: gray;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button svg {
+            fill: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div id="gameContainer">
+    <canvas id="canvas" width="400" height="800"></canvas>
+    <canvas id="nextShapeCanvas" width="200" height="200"></canvas>
+    <canvas id="scoreCanvas" width="200" height="200"></canvas>
+</div>
+<button onclick="resetVars()">
+    <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
+        <path
+                d="M 18,11 V 7 l -5,5 5,5 v -4 c 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 -3.3,0 -6,-2.7 -6,-6 h -2 c 0,4.4 3.6,8 8,8 4.4,0 8,-3.6 8,-8 0,-4.4 -3.6,-8 -8,-8 z"
+        ></path>
+    </svg>
+</button>
+<img id="image" src="rotations.png" style="display: none"/>
+<script src="tetris.js"></script>
+</body>
+</html>
